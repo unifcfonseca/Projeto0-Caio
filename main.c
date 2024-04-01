@@ -23,7 +23,7 @@ int main(){
         printf("Escolha uma opcao: \n");
         scanf("%d", &opcao);
         opcao--;
-        if(opcao< 2){
+        if(opcao >2){
             printf("opcao invalida!\n");
         }
         else if(opcao >= 0){
