@@ -1,6 +1,18 @@
 #include <stdio.h>
+#include "tarefas.h"
 
 int main(){
+    funcao fs[]= {criar, deletar, listar, salvar, carregar};
+
+    Tarefa tarefas[TOTAL];
+    int pos;
+
+    ERROS erro = fs[4](tarefas, &pos);
+    if(erro != OK){
+        pos = 0;
+    }
+
+
     int opcao;
     do{
         printf("\nMenu principal\n");
@@ -10,6 +22,15 @@ int main(){
         printf("0 - Sair\n");
         printf("Escolha uma opcao: \n");
         scanf("%d", &opcao);
-        printf("opcao escolhida: %d\n", opcao);
-    }while(opcao);
+        opcao--;
+        if(opcao< 2){
+            printf("opcao invalida!\n");
+        }
+        else if(opcao >= 0){
+            fs[opcao](tarefas, &pos);
+        }else{
+            printf("Sair...\n");
+        }
+    }while(opcao >= 0);
+
 }
