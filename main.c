@@ -12,7 +12,6 @@ int main(){
         pos = 0;
     }
 
-
     int opcao;
     do{
         printf("\nMenu principal\n");
@@ -32,5 +31,5 @@ int main(){
             printf("Sair...\n");
         }
     }while(opcao >= 0);
-
+    fs[3](tarefas, &pos);
 }
